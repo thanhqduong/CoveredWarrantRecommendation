@@ -6,9 +6,13 @@
 ##### 0. Get real-time data
 ##### 1. Filter Covered Warrant to ensure liquidity
 * This is the most simple way I found (that worked how I wanted); there are of course many ways that are more accurate:
+  
 a. For all CWs, list their traded volume $l$
+
 b. Calculate $b = max(min(\text{median(l)}, mean(l)/4), 1000)$
+
 c. Filter out CWs that their traded volume is less than $b$
+
 ##### 2. Find implied volatility $\sigma$ of each CW
 a. Utilize the Black-Scholes (BS) formula
 * Get the current call price; assuming other parameters are available besides the risk-free rate
