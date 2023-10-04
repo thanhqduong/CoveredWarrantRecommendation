@@ -12,7 +12,7 @@ c. Filter out CWs that their traded volume is less than $b$
 ##### 2. Find implied volatility $\sigma$ of each CW
 a. Utilize the Black-Scholes (BS) formula
 * Get the current call price; assuming other parameters are available besides the risk-free rate
-* Risk-free rate: Spoiler: We will use $\sigma$ to compare CWs with each other, therefore, when $\Delta t$ (time to maturity) is large, it doesn't matter. To avoid risk when $\Delta t \approx 0$, choose a relatively small risk-free rate; I arbitrarily choose $2\%$ annually.
+* Risk-free rate: Spoiler: We will use $\sigma$ to compare CWs with each other, therefore, when $\Delta t$ (time to maturity) is large, it doesn't matter. To avoid risk when $\Delta t \approx 0$, choose a relatively small risk-free rate; I arbitrarily choose $2$% annually.
 * We can refer to the BS formula as: $C = bs(\sigma)$ as we assumed other variables are known.
 
 b. Since we cannot directly reverse-engineer the BS formula (to $bs^{-1}$) to find the implied volatility from the current call price, we can find the implied volatility using the Newton-Raphson method to find the root of the function $f(\sigma) = C - bs(\sigma)$
